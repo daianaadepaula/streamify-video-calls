@@ -1,0 +1,42 @@
+@baseUrl = http://localhost:5001/api/auth
+
+GET {{baseUrl}}/tasks
+
+###
+
+# @name createTask
+POST {{baseUrl}}/signup
+content-type: application/json
+
+{
+  "fullName": "Daiana de Paula",
+	"email": "daiana@email.com",
+	"password": "123456"
+}
+
+###
+
+@taskId = {{createTask.response.body.$.id}}
+
+###
+
+PUT  {{baseUrl}}/tasks/{{taskId}}
+content-type: application/json
+
+{
+  "title": "Estudar programação",
+  "description": "Estudar promises em node.js"
+}
+
+###
+
+PATCH   {{baseUrl}}/tasks/{{taskId}}/completed
+content-type: application/json
+
+{
+  "completed": true
+}
+
+###
+
+DELETE {{baseUrl}}/tasks/{{taskId}}
