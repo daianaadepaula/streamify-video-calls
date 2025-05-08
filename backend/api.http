@@ -1,42 +1,57 @@
-@baseUrl = http://localhost:5001/api/auth
+@baseUrl = http://localhost:5001/api
 
-GET {{baseUrl}}/tasks
+GET {{baseUrl}}/auth/me
 
 ###
 
-# @name createTask
-POST {{baseUrl}}/signup
+@name createSignup
+POST {{baseUrl}}/auth/signup
 content-type: application/json
 
 {
-  "fullName": "Daiana de Paula",
-	"email": "daiana@email.com",
+  "fullName": "Maria Araujo",
+	"email": "maria@email.com",
 	"password": "123456"
 }
 
 ###
 
-@taskId = {{createTask.response.body.$.id}}
-
-###
-
-PUT  {{baseUrl}}/tasks/{{taskId}}
+@name login 
+POST {{baseUrl}}/auth/login
 content-type: application/json
 
 {
-  "title": "Estudar programação",
-  "description": "Estudar promises em node.js"
+	"email": "maria@email.com",
+	"password": "123456"
 }
 
 ###
 
-PATCH   {{baseUrl}}/tasks/{{taskId}}/completed
+POST {{baseUrl}}/auth/logout
+
+###
+
+@authToken = {{login.response.headers.X-AuthToken}}
+
+###
+POST {{baseUrl}}/auth/onboarding
+Cookie: jwt={{authToken}}
 content-type: application/json
 
 {
-  "completed": true
+  "fullName": "Maria Araujo",
+  "bio": "Hey there! I want to learn Spanish. Let's practice",
+  "nativeLanguage": "Portuguese",
+  "learningLanguage": "Spanish",
+  "location": "Rio de Janeiro"
 }
 
 ###
 
-DELETE {{baseUrl}}/tasks/{{taskId}}
+GET {{baseUrl}}/users/
+
+###
+
+GET {{baseUrl}}/users/friends
+
+###
