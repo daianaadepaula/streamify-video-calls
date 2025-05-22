@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useAuthUser from "../hooks/useAuthUser";
+import useAuthUser from './../hooks/useAuthUser'
 import toast, { LoaderIcon } from "react-hot-toast";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { completeOnboarding } from "../lib/api";
