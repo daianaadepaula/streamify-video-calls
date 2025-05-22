@@ -30,14 +30,13 @@ git clone https://github.com/daianaadepaula/streamify-video-calls.git
 cd streamify-video-calls
 ```
 
-### 2. Backend Setup
+### 2. Install dependencies for both frontend and backend:
 
 ```bash
-cd backend
-npm install
+   npm run build
 ```
 
-Create a .env file in the backend/ directory with the following content:
+Create a .env file in the root directory with the following content:
 
 ```bash
 PORT=5001
@@ -47,21 +46,21 @@ STEAM_API_SECRET=your_stream_api_secret
 JWT_SECRET_KEY=your_jwt_secret
 ```
 
-Start the backend server:
+### 3. Run the application in development mode:
 
-```bash
-npm run dev
-```
+ ```bash
+   npm run dev
+ ```
 
-### 3. Frontend Setup
+The frontend runs at http://localhost:5173 and connects to the backend at http://localhost:5001.
+This will start both the frontend and backend on different ports.
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+## Scripts
 
-The frontend runs at http://localhost:5173 and connects to the backend at http://localhost:5000.
+- **Development**: npm run dev — Starts the backend server with nodemon in development mode.
+- **Production**: npm start — Starts the backend server in production mode.
+- **Build**: npm run build — Installs dependencies and builds the frontend.
+
 
 ## 🧪 Best Practices
 
