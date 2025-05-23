@@ -12,11 +12,14 @@
     "url": "git+https://github.com/daianaadepaula/streamify-video-calls.git"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Daiana de Paula",
+    "email": "daianaadepaula1@gmail.com",
+    "url": "https://www.linkedin.com/in/daianadepaula/"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/daianaadepaula/streamify-video-calls/issues"
   },
   "homepage": "https://github.com/daianaadepaula/streamify-video-calls#readme"
 }
-
