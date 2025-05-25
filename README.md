@@ -44,6 +44,7 @@ MONGO_URI=your_mongodb_uri
 STEAM_API_KEY=your_stream_api_key
 STEAM_API_SECRET=your_stream_api_secret
 JWT_SECRET_KEY=your_jwt_secret
+VITE_STREAM_API_KEY=your_stream_api_key
 ```
 
 ### 3. Run the application in development mode:
